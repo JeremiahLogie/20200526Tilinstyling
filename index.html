@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TilingnStyling – Quality Tiling Services</title>
+    <style>
+        /* ============================================
+                   CSS RESET & BASE
+                   ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #1A1A1A;
+            background: #FFFFFF;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ============================================
+                   BACK TO TOP BUTTON
+                   ============================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1A4D2E;
+            color: #FFFFFF;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: none;
+            z-index: 999;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .back-to-top:hover {
+            background: #2D5A27;
+            transform: scale(1.1);
+        }
+
+        .back-to-top.show {
+            display: block;
+        }
+
+        /* ============================================
+                   HEADER & NAVIGATION
+                   ============================================ */
+        header {
+            background: #1A4D2E;
+            color: #FFFFFF;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #8BC34A;
+        }
+
+        .logo img {
+            height: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            font-size: 16px;
+            padding: 8px 5px;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+
+        nav a:hover {
+            color: #8BC34A;
+        }
+
+        nav a.active {
+            color: #8BC34A;
+            border-bottom: 2px solid #8BC34A;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: #FFFFFF;
+        }
+
+        /* ============================================
+                   PAGES
+                   ============================================ */
+        .page {
+            display: none;
+            padding: 40px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: 60vh;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* ============================================
+                   HOME PAGE
+                   ============================================ */
+        .hero {
+            background: #1A4D2E;
+            color: #FFFFFF;
+            padding: 80px 60px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #8BC34A;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #8BC34A;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            margin: 5px 10px;
+        }
+
+        .btn-primary {
+            background: #8BC34A;
+            color: #1A4D2E;
+        }
+
+        .btn-primary:hover {
+            background: #7CB342;
+            transform: scale(1.05);
+        }
+
+        .btn-secondary {
+            background: #FFFFFF;
+            color: #1A4D2E;
+            border: 2px solid #1A4D2E;
+        }
+
+        .btn-secondary:hover {
+            background: #1A4D2E;
+            color: #FFFFFF;
+        }
+
+        .btn-dark {
+            background: #1A4D2E;
+            color: #FFFFFF;
+        }
+
+        .btn-dark:hover {
+            background: #2D5A27;
+            transform: scale(1.05);
+        }
+
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin: 30px 0 20px 0;
+        }
+
+        .badge {
+            background: #F5F5F5;
+            padding: 20px 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #E0E0E0;
+            min-width: 150px;
+        }
+
+        .badge .icon {
+            font-size: 30px;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .badge .label {
+            font-weight: bold;
+            color: #1A4D2E;
+        }
+
+        /* ============================================
+                   TESTIMONIALS
+                   ============================================ */
+        .testimonials {
+            margin-top: 40px;
+        }
+
+        .testimonials h2 {
+            text-align: center;
+            color: #1A4D2E;
+            margin-bottom: 30px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .testimonial-card {
+            background: #F5F5F5;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #8BC34A;
+        }
+
+        .testimonial-card .stars {
+            color: #FFD700;
+            font-size: 20px;
+        }
+
+        .testimonial-card .text {
+            font-style: italic;
+            margin: 10px 0;
+            color: #333;
+        }
+
+        .testimonial-card .author {
+            font-weight: bold;
+            color: #1A4D2E;
+        }
+
+        /* ============================================
+                   SERVICES PAGE
+                   ============================================ */
+        .section-title {
+            font-size: 36px;
+            color: #1A4D2E;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #FFFFFF;
+            border: 2px solid #E0E0E0;
+            border-radius: 12px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: #1A4D2E;
+        }
+
+        .service-card .icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #1A4D2E;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            color: #333333;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .page-cta {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        /* ============================================
+                   PORTFOLIO PAGE
+                   ============================================ */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            padding: 10px 25px;
+            border-radius: 25px;
+            border: 2px solid #1A4D2E;
+            background: #FFFFFF;
+            color: #1A4D2E;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        .filter-btn.active {
+            background: #1A4D2E;
+            color: #FFFFFF;
+        }
+
+        .filter-btn:hover {
+            background: #1A4D2E;
+            color: #FFFFFF;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            background: #F5F5F5;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid #E0E0E0;
+            transition: transform 0.3s;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .gallery-item .category-tag {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: #1A4D2E;
+            color: #FFFFFF;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        /* ============================================
+                   ESTIMATOR PAGE
+                   ============================================ */
+        .estimator-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            background: #F8F8F8;
+            padding: 40px;
+            border-radius: 12px;
+        }
+
+        .estimator-inputs label {
+            display: block;
+            font-weight: bold;
+            color: #1A4D2E;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .estimator-inputs select,
+        .estimator-inputs input {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #D0D0D0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .estimator-inputs select:focus,
+        .estimator-inputs input:focus {
+            border-color: #1A4D2E;
+            outline: none;
+        }
+
+        .estimator-inputs input[type="range"] {
+            width: 100%;
+            accent-color: #1A4D2E;
+            padding: 0;
+        }
+
+        .range-value {
+            text-align: center;
+            font-weight: bold;
+            color: #1A4D2E;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+
+        .estimator-output {
+            background: #FFFFFF;
+            padding: 30px;
+            border-radius: 12px;
+            border: 2px solid #1A4D2E;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .estimator-output .total {
+            font-size: 56px;
+            font-weight: bold;
+            color: #1A4D2E;
+        }
+
+        .estimator-output .breakdown {
+            font-size: 16px;
+            color: #333333;
+            margin: 10px 0;
+        }
+
+        .estimator-output .timeline {
+            font-size: 18px;
+            color: #333333;
+            margin-bottom: 15px;
+        }
+
+        .estimator-output .disclaimer {
+            font-size: 12px;
+            color: #999999;
+            margin-top: 10px;
+        }
+
+        .estimator-output .btn {
+            margin-top: 15px;
+        }
+
+        /* ============================================
+                   ABOUT PAGE
+                   ============================================ */
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .about-photo {
+            text-align: center;
+        }
+
+        .about-photo .photo-circle {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: #F5F5F5;
+            border: 4px solid #1A4D2E;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 80px;
+            color: #1A4D2E;
+            overflow: hidden;
+        }
+
+        .about-photo .photo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-text .credentials {
+            margin: 15px 0;
+            list-style: none;
+        }
+
+        .about-text .credentials li {
+            margin: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .about-text .credentials li::before {
+            content: "✓";
+            color: #8BC34A;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        .about-text .why-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .about-text .why-item {
+            background: #F5F5F5;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #1A4D2E;
+        }
+
+        /* ============================================
+                   CONTACT PAGE
+                   ============================================ */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .contact-form label {
+            display: block;
+            font-weight: bold;
+            color: #1A4D2E;
+            margin-top: 15px;
+            margin-bottom: 5px;
+        }
+
+        .contact-form label .required {
+            color: #FF0000;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px 15px;
+            border: 2px solid #D0D0D0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            border-color: #1A4D2E;
+            outline: none;
+        }
+
+        .contact-form textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        .contact-form .error {
+            color: #FF0000;
+            font-size: 13px;
+            display: none;
+        }
+
+        .contact-form .error.show {
+            display: block;
+        }
+
+        .contact-info {
+            background: #F5F5F5;
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .contact-info h3 {
+            color: #1A4D2E;
+            margin-bottom: 20px;
+        }
+
+        .contact-info .info-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 15px 0;
+        }
+
+        .contact-info .info-item .icon {
+            font-size: 24px;
+            width: 40px;
+            text-align: center;
+        }
+
+        .contact-info .info-item a {
+            color: #1A4D2E;
+            font-weight: bold;
+        }
+
+        .contact-info .info-item a:hover {
+            color: #8BC34A;
+        }
+
+        /* ============================================
+                   POSTCODE CHECKER
+                   ============================================ */
+        .postcode-checker {
+            margin-top: 20px;
+            padding: 20px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border: 2px solid #E0E0E0;
+        }
+
+        .postcode-checker h4 {
+            color: #1A4D2E;
+            margin-bottom: 10px;
+        }
+
+        .postcode-checker .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .postcode-checker input {
+            flex: 1;
+            padding: 10px 15px;
+            border: 2px solid #D0D0D0;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .postcode-checker .btn {
+            margin: 0;
+        }
+
+        .postcode-result {
+            margin-top: 10px;
+            font-weight: bold;
+            padding: 10px;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .postcode-result.success {
+            display: block;
+            background: #E8F5E9;
+            color: #1A4D2E;
+            border: 1px solid #8BC34A;
+        }
+
+        .postcode-result.error {
+            display: block;
+            background: #FFF3E0;
+            color: #E65100;
+            border: 1px solid #FFB74D;
+        }
+
+        /* ============================================
+                   EMAIL CAPTURE MODAL
+                   ============================================ */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal-box {
+            background: #FFFFFF;
+            padding: 40px;
+            border-radius: 16px;
+            max-width: 480px;
+            width: 90%;
+            text-align: center;
+            animation: modalSlideIn 0.4s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes modalSlideIn {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .modal-box .icon {
+            font-size: 60px;
+            margin-bottom: 10px;
+        }
+
+        .modal-box h2 {
+            color: #1A4D2E;
+            margin-bottom: 8px;
+        }
+
+        .modal-box p {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .modal-box input {
+            width: 100%;
+            padding: 12px 18px;
+            border: 2px solid #D0D0D0;
+            border-radius: 8px;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .modal-box input:focus {
+            border-color: #1A4D2E;
+            outline: none;
+        }
+
+        .modal-box .btn {
+            width: 100%;
+        }
+
+        .modal-box .skip-link {
+            display: block;
+            margin-top: 12px;
+            color: #999999;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .modal-box .skip-link:hover {
+            color: #666;
+        }
+
+        /* ============================================
+                   CONFIRMATION
+                   ============================================ */
+        .confirmation {
+            display: none;
+            background: #E8F5E9;
+            border: 2px solid #8BC34A;
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .confirmation.show {
+            display: block;
+        }
+
+        .confirmation .icon {
+            font-size: 48px;
+        }
+
+        .confirmation h3 {
+            color: #1A4D2E;
+        }
+
+        /* ============================================
+                   FOOTER
+                   ============================================ */
+        footer {
+            background: #1A1A1A;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #8BC34A;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        footer .footer-links {
+            margin: 10px 0;
+        }
+
+        footer .footer-links a {
+            margin: 0 15px;
+            color: #CCCCCC;
+            font-size: 14px;
+        }
+
+        footer .footer-links a:hover {
+            color: #8BC34A;
+        }
+
+        /* ============================================
+                   RESPONSIVE
+                   ============================================ */
+        @media (max-width: 992px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .estimator-container {
+                grid-template-columns: 1fr;
+            }
+            .about-container {
+                grid-template-columns: 1fr;
+            }
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .hero h1 {
+                font-size: 36px;
+            }
+            .page {
+                padding: 30px 25px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 12px 20px;
+            }
+            .hamburger {
+                display: block;
+            }
+            nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                align-items: center;
+                padding: 15px 0;
+                gap: 12px;
+                border-top: 1px solid rgba(255, 255, 255, 0.1);
+            }
+            nav.open {
+                display: flex;
+            }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+            }
+            .trust-badges {
+                gap: 15px;
+            }
+            .badge {
+                min-width: 120px;
+                padding: 15px 20px;
+            }
+            .hero {
+                padding: 40px 25px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .estimator-output .total {
+                font-size: 40px;
+            }
+            .about-text .why-grid {
+                grid-template-columns: 1fr;
+            }
+            .page {
+                padding: 20px 15px;
+            }
+            .estimator-container {
+                padding: 20px;
+            }
+            .modal-box {
+                padding: 25px;
+            }
+            .filter-buttons {
+                gap: 8px;
+            }
+            .filter-btn {
+                padding: 6px 14px;
+                font-size: 13px;
+            }
+            .postcode-checker .input-group {
+                flex-direction: column;
+            }
+            .logo {
+                font-size: 20px;
+            }
+            .logo img {
+                height: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 24px;
+            }
+            .hero p {
+                font-size: 16px;
+            }
+            .btn {
+                padding: 10px 22px;
+                font-size: 14px;
+                margin: 4px 5px;
+            }
+            .section-title {
+                font-size: 28px;
+            }
+            .estimator-output .total {
+                font-size: 32px;
+            }
+            .estimator-container {
+                padding: 15px;
+            }
+            .modal-box {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+    BACK TO TOP BUTTON
+    ============================================ -->
+    <button class="back-to-top" id="backToTop" title="Back to top">↑</button>
+
+    <!-- ============================================
+    HEADER
+    ============================================ -->
+    <header>
+        <div class="logo">
+            <!-- Replace src with your actual logo -->
+            <img src="logo.png" alt="TilingnStyling Logo">
+            Tiling<span>nStyling</span>
+        </div>
+        <div class="hamburger" id="hamburger">☰</div>
+        <nav id="navMenu">
+            <a class="active" data-page="home">Home</a>
+            <a data-page="services">Services</a>
+            <a data-page="portfolio">Portfolio</a>
+            <a data-page="estimator">Estimator</a>
+            <a data-page="about">About</a>
+            <a data-page="contact">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ============================================
+    PAGE: HOME
+    ============================================ -->
+    <section class="page active" id="page-home">
+        <div class="hero">
+            <h1>Quality Tiling for <span>Homes &amp; Businesses</span></h1>
+            <p>Professional tiling services since 2011</p>
+            <div>
+                <button class="btn btn-primary" onclick="navigateTo('portfolio')">View Our Work</button>
+                <button class="btn btn-secondary" onclick="navigateTo('estimator')">Get a Free Estimate</button>
+            </div>
+        </div>
+
+        <div class="trust-badges">
+            <div class="badge">
+                <span class="icon">🏆</span>
+                <span class="label">15+ Years Experience</span>
+            </div>
+            <div class="badge">
+                <span class="icon">🛡️</span>
+                <span class="label">Fully Insured</span>
+            </div>
+            <div class="badge">
+                <span class="icon">💰</span>
+                <span class="label">Free Quotes</span>
+            </div>
+            <div class="badge">
+                <span class="icon">⭐</span>
+                <span class="label">Quality Guaranteed</span>
+            </div>
+        </div>
+
+        <!-- ============================================
+        TESTIMONIALS SECTION
+        ============================================ -->
+        <div class="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="text">"Ian did an amazing job on our bathroom. Highly recommend!"</p>
+                    <p class="author">– Sarah M.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="text">"Professional, punctual, and the tiling is flawless. Will hire again."</p>
+                    <p class="author">– James K.</p>
+                </div>
+                <div class="testimonial-card">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p class="text">"Great attention to detail. Our kitchen backsplash looks perfect."</p>
+                    <p class="author">– Lisa R.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    PAGE: SERVICES
+    ============================================ -->
+    <section class="page" id="page-services">
+        <h2 class="section-title">Our Tiling Services</h2>
+        <p class="section-subtitle">Professional tiling solutions for every space</p>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="icon">🛁</div>
+                <h3>Bathroom Tiling</h3>
+                <p>Wall &amp; floor tiling, wet rooms, showers, and custom bathroom designs.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🍳</div>
+                <h3>Kitchen Tiling</h3>
+                <p>Backsplash, floor tile, splashback, and kitchen renovation tiling.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">📐</div>
+                <h3>Flooring Tiling</h3>
+                <p>Living rooms, hallways, outdoor areas, and complete flooring installations.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">🏢</div>
+                <h3>Commercial Tiling</h3>
+                <p>Offices, retail spaces, restaurants, and large-scale commercial projects.</p>
+            </div>
+        </div>
+
+        <div class="page-cta">
+            <button class="btn btn-dark" onclick="navigateTo('estimator')">Get a Free Estimate</button>
+        </div>
+    </section>
+
+    <!-- ============================================
+    PAGE: PORTFOLIO
+    ============================================ -->
+    <section class="page" id="page-portfolio">
+        <h2 class="section-title">Our Tiling Portfolio</h2>
+        <p class="section-subtitle">Browse examples of our completed work</p>
+
+        <div class="filter-buttons">
+            <button class="filter-btn active" data-filter="all" onclick="filterGallery('all')">All</button>
+            <button class="filter-btn" data-filter="bathroom" onclick="filterGallery('bathroom')">Bathroom</button>
+            <button class="filter-btn" data-filter="kitchen" onclick="filterGallery('kitchen')">Kitchen</button>
+            <button class="filter-btn" data-filter="flooring" onclick="filterGallery('flooring')">Flooring</button>
+            <button class="filter-btn" data-filter="commercial" onclick="filterGallery('commercial')">Commercial</button>
+        </div>
+
+        <div class="gallery-grid" id="galleryGrid">
+            <!-- Replace the src URLs with your actual images -->
+            <div class="gallery-item" data-category="bathroom">
+                <img src="bathroom1.jpg" alt="Bathroom Tiling">
+                <span class="category-tag">Bathroom</span>
+            </div>
+            <div class="gallery-item" data-category="bathroom">
+                <img src="bathroom2.jpg" alt="Modern Bathroom">
+                <span class="category-tag">Bathroom</span>
+            </div>
+            <div class="gallery-item" data-category="kitchen">
+                <img src="Kitchen1.jpg" alt="Kitchen Backsplash">
+                <span class="category-tag">Kitchen</span>
+            </div>
+            <div class="gallery-item" data-category="kitchen">
+                <img src="Kitchen2.jpg" alt="Kitchen Floor">
+                <span class="category-tag">Kitchen</span>
+            </div>
+            <div class="gallery-item" data-category="flooring">
+                <img src="Flooring1.jpg" alt="Living Room Floor">
+                <span class="category-tag">Flooring</span>
+            </div>
+            <div class="gallery-item" data-category="flooring">
+                <img src="Flooring2.jpg" alt="Hallway Tiling">
+                <span class="category-tag">Flooring</span>
+            </div>
+            <div class="gallery-item" data-category="commercial">
+                <img src="commercial1.jpg" alt="Office Lobby">
+                <span class="category-tag">Commercial</span>
+            </div>
+            <div class="gallery-item" data-category="commercial">
+                <img src="commercial2.jpg" alt="Restaurant Floor">
+                <span class="category-tag">Commercial</span>
+            </div>
+            <div class="gallery-item" data-category="bathroom">
+                <img src="Bathroom3.jpg" alt="Wet Room Tiling">
+                <span class="category-tag">Bathroom</span>
+            </div>
+        </div>
+
+        <div class="page-cta">
+            <button class="btn btn-dark" onclick="navigateTo('estimator')">Get a Free Estimate</button>
+        </div>
+    </section>
+
+    <!-- ============================================
+    PAGE: ESTIMATOR
+    ============================================ -->
+    <section class="page" id="page-estimator">
+        <h2 class="section-title">Tiling Cost Estimator</h2>
+        <p class="section-subtitle">Get an instant approximate cost for your project</p>
+
+        <div class="estimator-container">
+            <div class="estimator-inputs">
+                <label for="projectType">Project Type</label>
+                <select id="projectType" onchange="updateEstimate()">
+                    <option value="bathroom">Bathroom</option>
+                    <option value="kitchen">Kitchen</option>
+                    <option value="flooring">Flooring</option>
+                    <option value="commercial">Commercial</option>
+                </select>
+
+                <label for="roomSize">Room Size: <span id="roomSizeDisplay">15</span> m²</label>
+                <input type="range" id="roomSize" min="5" max="100" value="15" oninput="updateEstimate()">
+                <div class="range-value" id="roomSizeValue">15 m²</div>
+
+                <label for="tileType">Tile Type</label>
+                <select id="tileType" onchange="updateEstimate()">
+                    <option value="ceramic">Ceramic</option>
+                    <option value="porcelain" selected>Porcelain</option>
+                    <option value="natural-stone">Natural Stone</option>
+                    <option value="glass">Glass</option>
+                    <option value="mosaic">Mosaic</option>
+                </select>
+
+                <label for="complexity">Complexity Level</label>
+                <select id="complexity" onchange="updateEstimate()">
+                    <option value="basic">Basic (Straight Lay)</option>
+                    <option value="medium" selected>Medium (Herringbone/Pattern)</option>
+                    <option value="high">High (Detailed Mosaic/Custom)</option>
+                </select>
+
+                <label for="urgency">Urgency</label>
+                <select id="urgency" onchange="updateEstimate()">
+                    <option value="standard" selected>Standard (2-4 weeks)</option>
+                    <option value="rush">Rush (1 week or less)</option>
+                </select>
+            </div>
+
+            <div class="estimator-output" id="estimatorOutput">
+                <div class="total" id="estimatedTotal">TT$3,000</div>
+                <div class="breakdown">
+                    Materials: <span id="materialCost">TT$1,200</span> &nbsp;|&nbsp;
+                    Labor: <span id="laborCost">TT$1,800</span>
+                </div>
+                <div class="timeline">
+                    Estimated Timeline: <span id="estimatedTimeline">5</span> days
+                </div>
+                <button class="btn btn-dark" onclick="showEmailModal()">Send Enquiry with This Estimate</button>
+                <div class="disclaimer">⚠ Estimate is approximate. Final quote may vary.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    PAGE: ABOUT
+    ============================================ -->
+    <section class="page" id="page-about">
+        <h2 class="section-title">About TilingnStyling</h2>
+        <p class="section-subtitle">Quality tiling services since 2011</p>
+
+        <div class="about-container">
+            <div class="about-photo">
+                <div class="photo-circle">
+                    
+                    <img src="Ian Gary.jpg" alt="Ian Gary">
+                </div>
+                <h3>Ian Gary</h3>
+                <p>Owner &amp; Lead Tiler</p>
+                <p style="font-style: italic; margin-top: 5px;">"Quality is my promise to every customer."</p>
+            </div>
+
+            <div class="about-text">
+                <h2>Meet Ian Gary</h2>
+                <p>With over <strong>15 years of experience</strong> in the tiling industry, Ian has completed hundreds of residential and commercial projects across Trinidad &amp; Tobago. His commitment to quality craftsmanship and attention to detail has earned TilingnStyling a reputation for excellence.</p>
+
+                <ul class="credentials">
+                    <li>Fully licensed and insured</li>
+                    <li>City &amp; Guilds qualified</li>
+                    <li>Member of the National Tiling Association</li>
+                    <li>Specialist in custom and heritage tiling</li>
+                </ul>
+
+                <h3 style="color: #1A4D2E; margin-top: 20px;">Why Choose Us</h3>
+                <div class="why-grid">
+                    <div class="why-item">✓ 15+ Years Experience</div>
+                    <div class="why-item">✓ Fully Insured</div>
+                    <div class="why-item">✓ Free, No-Obligation Quotes</div>
+                    <div class="why-item">✓ Quality Guaranteed</div>
+                    <div class="why-item">✓ Competitive Pricing</div>
+                    <div class="why-item">✓ Clean &amp; Respectful Service</div>
+                </div>
+
+                <div style="margin-top: 20px;">
+                    <button class="btn btn-dark" onclick="navigateTo('contact')">Contact Ian</button>
+                    <button class="btn btn-secondary" onclick="navigateTo('portfolio')">View Our Work</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    PAGE: CONTACT
+    ============================================ -->
+    <section class="page" id="page-contact">
+        <h2 class="section-title">Contact TilingnStyling</h2>
+        <p class="section-subtitle">Get a free, no-obligation quote for your tiling project</p>
+
+        <div class="contact-container">
+            <div class="contact-form" id="contactForm">
+                <form onsubmit="submitContactForm(event)">
+                    <label for="contactName">Name <span class="required">*</span></label>
+                    <input type="text" id="contactName" placeholder="Your full name" required>
+
+                    <label for="contactEmail">Email <span class="required">*</span></label>
+                    <input type="email" id="contactEmail" placeholder="your@email.com" required>
+
+                    <label for="contactPhone">Phone</label>
+                    <input type="tel" id="contactPhone" placeholder="(868) XXX-XXXX">
+
+                    <label for="contactProject">Project Type</label>
+                    <select id="contactProject">
+                        <option value="bathroom">Bathroom</option>
+                        <option value="kitchen">Kitchen</option>
+                        <option value="flooring">Flooring</option>
+                        <option value="commercial">Commercial</option>
+                    </select>
+
+                    <label for="contactMessage">Message</label>
+                    <textarea id="contactMessage" placeholder="Tell us about your project..."></textarea>
+
+                    <div id="formError" class="error"></div>
+
+                    <button type="submit" class="btn btn-dark" style="width: 100%; margin-top: 10px;">Send Enquiry</button>
+                </form>
+
+                <div id="confirmationMessage" class="confirmation">
+                    <div class="icon">✅</div>
+                    <h3>Thank You!</h3>
+                    <p>Your enquiry has been sent. Ian will respond within 24 hours.</p>
+                </div>
+            </div>
+
+            <div class="contact-info">
+                <h3>Contact Information</h3>
+
+                <div class="info-item">
+                    <span class="icon">📞</span>
+                    <div>
+                        <strong>Call Ian</strong><br>
+                        <a href="tel:+1868XXXXXXX">(868) XXX-XXXX</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="icon">💬</span>
+                    <div>
+                        <strong>WhatsApp</strong><br>
+                        <a href="https://wa.me/1868XXXXXXX" target="_blank">Start Chat</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="icon">📧</span>
+                    <div>
+                        <strong>Email</strong><br>
+                        <a href="mailto:ian@tilingnstyling.com">ian@tilingnstyling.com</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="icon">📍</span>
+                    <div>
+                        <strong>Service Area</strong><br>
+                        Trinidad &amp; Tobago
+                    </div>
+                </div>
+
+                <div class="postcode-checker">
+                    <h4>📍 Do We Service Your Area?</h4>
+                    <div class="input-group">
+                        <input type="text" id="postcodeInput" placeholder="Enter postcode (e.g., SW1A 1AA)">
+                        <button class="btn btn-dark" onclick="checkPostcode()" style="margin:0; padding: 10px 20px;">Check</button>
+                    </div>
+                    <div id="postcodeResult" class="postcode-result"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+    EMAIL CAPTURE MODAL
+    ============================================ -->
+    <div class="modal-overlay" id="emailModal">
+        <div class="modal-box">
+            <div class="icon">📨</div>
+            <h2>Get Your Estimate by Email</h2>
+            <p>Enter your email address below and we'll send your estimate directly to your inbox.</p>
+            <input type="email" id="modalEmail" placeholder="your@email.com">
+            <button class="btn btn-primary" onclick="submitEmailCapture()">Send Estimate</button>
+            <span class="skip-link" onclick="closeEmailModal()">Skip – I'll contact you later</span>
+        </div>
+    </div>
+
+    <!-- ============================================
+    FOOTER
+    ============================================ -->
+    <footer>
+        <div class="logo" style="color: #FFFFFF; font-size: 20px; margin-bottom: 10px;">
+            Tiling<span style="color: #8BC34A;">nStyling</span>
+        </div>
+        <div class="footer-links">
+            <a href="#" onclick="navigateTo('home'); return false;">Home</a>
+            <a href="#" onclick="navigateTo('services'); return false;">Services</a>
+            <a href="#" onclick="navigateTo('portfolio'); return false;">Portfolio</a>
+            <a href="#" onclick="navigateTo('estimator'); return false;">Estimator</a>
+            <a href="#" onclick="navigateTo('about'); return false;">About</a>
+            <a href="#" onclick="navigateTo('contact'); return false;">Contact</a>
+        </div>
+        <p style="color: #999999; font-size: 14px;">
+            © 2026 TilingnStyling. All rights reserved. &nbsp;|&nbsp;
+            <a href="mailto:ian@tilingnstyling.com">ian@tilingnstyling.com</a> &nbsp;|&nbsp;
+            <a href="tel:+1868XXXXXXX">(868) XXX-XXXX</a>
+        </p>
+    </footer>
+
+    <!-- ============================================
+    JAVASCRIPT
+    ============================================ -->
+    <script>
+        // ============================================
+        // PAGE NAVIGATION
+        // ============================================
+        function navigateTo(page) {
+            document.querySelectorAll('.page').forEach(function(p) {
+                p.classList.remove('active');
+            });
+            var target = document.getElementById('page-' + page);
+            if (target) {
+                target.classList.add('active');
+            }
+            document.querySelectorAll('nav a').forEach(function(link) {
+                link.classList.remove('active');
+                if (link.getAttribute('data-page') === page) {
+                    link.classList.add('active');
+                }
+            });
+            document.getElementById('navMenu').classList.remove('open');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ============================================
+        // HAMBURGER MENU
+        // ============================================
+        document.getElementById('hamburger').addEventListener('click', function() {
+            document.getElementById('navMenu').classList.toggle('open');
+        });
+
+        document.querySelectorAll('nav a').forEach(function(link) {
+            link.addEventListener('click', function() {
+                navigateTo(this.getAttribute('data-page'));
+            });
+        });
+
+        // ============================================
+        // BACK TO TOP BUTTON
+        // ============================================
+        window.addEventListener('scroll', function() {
+            var btn = document.getElementById('backToTop');
+            if (window.scrollY > 300) {
+                btn.classList.add('show');
+            } else {
+                btn.classList.remove('show');
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ============================================
+        // PORTFOLIO FILTER
+        // ============================================
+        function filterGallery(category) {
+            document.querySelectorAll('.filter-btn').forEach(function(btn) {
+                btn.classList.remove('active');
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.classList.add('active');
+                }
+            });
+            document.querySelectorAll('.gallery-item').forEach(function(item) {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // ============================================
+        // ESTIMATOR CALCULATOR
+        // ============================================
+        function updateEstimate() {
+            var roomSize = parseFloat(document.getElementById('roomSize').value);
+            var tileType = document.getElementById('tileType').value;
+            var complexity = document.getElementById('complexity').value;
+            var urgency = document.getElementById('urgency').value;
+
+            document.getElementById('roomSizeDisplay').textContent = roomSize;
+            document.getElementById('roomSizeValue').textContent = roomSize + ' m²';
+
+            var tileMultipliers = { 'ceramic': 1.0, 'porcelain': 1.4, 'natural-stone': 2.2, 'glass': 2.8, 'mosaic': 3.5 };
+            var complexityMultipliers = { 'basic': 1.0, 'medium': 1.6, 'high': 2.4 };
+            var urgencyMultipliers = { 'standard': 1.0, 'rush': 1.35 };
+
+            var baseMaterialRate = 75;
+            var baseLaborRate = 120;
+
+            var tileFactor = tileMultipliers[tileType] || 1.0;
+            var complexityFactor = complexityMultipliers[complexity] || 1.0;
+            var urgencyFactor = urgencyMultipliers[urgency] || 1.0;
+
+            var materialCost = roomSize * tileFactor * baseMaterialRate;
+            var laborCost = roomSize * complexityFactor * baseLaborRate;
+            var subtotal = materialCost + laborCost;
+            var urgencyAdjustment = subtotal * (urgencyFactor - 1);
+            var totalCost = subtotal + urgencyAdjustment;
+
+            totalCost = Math.round(totalCost);
+            materialCost = Math.round(materialCost);
+            laborCost = Math.round(laborCost);
+
+            var timelineDays = Math.round((roomSize / 5) * complexityFactor);
+            if (timelineDays < 1) timelineDays = 1;
+
+            document.getElementById('estimatedTotal').textContent = 'TT$' + totalCost.toLocaleString();
+            document.getElementById('materialCost').textContent = 'TT$' + materialCost.toLocaleString();
+            document.getElementById('laborCost').textContent = 'TT$' + laborCost.toLocaleString();
+            document.getElementById('estimatedTimeline').textContent = timelineDays;
+        }
+
+        // ============================================
+        // EMAIL CAPTURE MODAL
+        // ============================================
+        function showEmailModal() {
+            document.getElementById('emailModal').classList.add('show');
+            document.getElementById('modalEmail').value = '';
+            document.getElementById('modalEmail').focus();
+        }
+
+        function closeEmailModal() {
+            document.getElementById('emailModal').classList.remove('show');
+            restoreModalContent();
+        }
+
+        function submitEmailCapture() {
+            var email = document.getElementById('modalEmail').value.trim();
+            if (!email || !email.includes('@') || !email.includes('.')) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            var modalBox = document.querySelector('.modal-box');
+            modalBox.innerHTML = `
+                        <div class="icon">✅</div>
+                        <h2>Estimate Sent!</h2>
+                        <p>Your estimate has been sent to <strong>${email}</strong></p>
+                        <p style="font-size: 14px; color: #999;">Ian will also follow up within 24 hours.</p>
+                        <button class="btn btn-primary" onclick="closeEmailModal()" style="margin-top: 15px;">Close</button>
+                    `;
+        }
+
+        function restoreModalContent() {
+            var modalBox = document.querySelector('.modal-box');
+            if (modalBox && !modalBox.querySelector('.btn-primary')) {
+                modalBox.innerHTML = `
+                            <div class="icon">📨</div>
+                            <h2>Get Your Estimate by Email</h2>
+                            <p>Enter your email address below and we'll send your estimate directly to your inbox.</p>
+                            <input type="email" id="modalEmail" placeholder="your@email.com">
+                            <button class="btn btn-primary" onclick="submitEmailCapture()">Send Estimate</button>
+                            <span class="skip-link" onclick="closeEmailModal()">Skip – I'll contact you later</span>
+                        `;
+            }
+        }
+
+        document.getElementById('emailModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeEmailModal();
+            }
+        });
+
+        // ============================================
+        // CONTACT FORM
+        // ============================================
+        function submitContactForm(e) {
+            e.preventDefault();
+            var name = document.getElementById('contactName').value.trim();
+            var email = document.getElementById('contactEmail').value.trim();
+            var errorDiv = document.getElementById('formError');
+
+            if (!name) {
+                errorDiv.textContent = 'Please enter your name.';
+                errorDiv.classList.add('show');
+                return;
+            }
+            if (!email || !email.includes('@') || !email.includes('.')) {
+                errorDiv.textContent = 'Please enter a valid email address.';
+                errorDiv.classList.add('show');
+                return;
+            }
+            errorDiv.classList.remove('show');
+            document.querySelector('.contact-form form').style.display = 'none';
+            document.getElementById('confirmationMessage').classList.add('show');
+        }
+
+        // ============================================
+        // POSTCODE CHECKER
+        // ============================================
+        function checkPostcode() {
+            var postcode = document.getElementById('postcodeInput').value.trim().toUpperCase();
+            var resultDiv = document.getElementById('postcodeResult');
+            if (!postcode) {
+                resultDiv.className = 'postcode-result error';
+                resultDiv.textContent = '⚠ Please enter a postcode.';
+                return;
+            }
+
+            var serviceAreas = ['SW1A', 'SW1E', 'SW1H', 'SW1P', 'SW1V', 'SW1W', 'SW1X', 'SW1Y',
+                'WC1A', 'WC2A', 'EC1A', 'EC2A', 'N1', 'N5', 'E1', 'E2'
+            ];
+
+            var found = serviceAreas.some(function(area) { return postcode.indexOf(area) === 0; });
+
+            if (found) {
+                resultDiv.className = 'postcode-result success';
+                resultDiv.innerHTML = '✅ Great news! TilingnStyling services your area. Contact us for a free quote!';
+            } else {
+                resultDiv.className = 'postcode-result error';
+                resultDiv.innerHTML = '⚠️ We don\'t currently service your area, but contact us for exceptions.';
+            }
+        }
+
+        document.getElementById('postcodeInput').addEventListener('keydown', function(e) {
+            if (e.key === 'Enter') { checkPostcode(); }
+        });
+
+        // ============================================
+        // INIT
+        // ============================================
+        updateEstimate();
+    </script>
+
+</body>
+</html>
