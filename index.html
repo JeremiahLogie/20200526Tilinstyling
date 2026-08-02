@@ -1277,8 +1277,7 @@
         <div class="contact-container">
             <div class="contact-form" id="contactForm">
                 <!-- FORM WITH GOOGLE APPS SCRIPT -->
-                <form action="https://script.google.com/macros/s/AKfycbwlkd7k8CCjoVrPCeCatP3gy0ssI3hdu1kFVT2XFYdaI8AcF7B2oa3qXJPN1a1MF6jqAw/exec" method="POST">
-                    <!-- Hidden field for Google Apps Script -->
+                <form action="https://script.google.com/macros/s/AKfycbx5eQTb4fDmrXLOkydJrigzpWB7MDeIW7bYOus8kGCqGX57F6tmyYQLHpIg4BapIynv7A/exec" method="POST">
                     <input type="hidden" name="_subject" value="New Enquiry from TilingnStyling Website">
 
                     <label for="contactName">Name <span class="required">*</span></label>
@@ -1370,7 +1369,7 @@
             <p>Enter your email address below and we'll send your estimate directly to your inbox.</p>
 
             <!-- FORM WITH GOOGLE APPS SCRIPT -->
-            <form action="https://script.google.com/macros/s/AKfycbwlkd7k8CCjoVrPCeCatP3gy0ssI3hdu1kFVT2XFYdaI8AcF7B2oa3qXJPN1a1MF6jqAw/exec" method="POST">
+            <form action="https://script.google.com/macros/s/AKfycbx5eQTb4fDmrXLOkydJrigzpWB7MDeIW7bYOus8kGCqGX57F6tmyYQLHpIg4BapIynv7A/exec" method="POST">
                 <input type="hidden" name="_subject" value="New Estimate Request from TilingnStyling">
 
                 <!-- Estimate details will be filled by JavaScript -->
@@ -1530,10 +1529,9 @@
         }
 
         // ============================================
-        // EMAIL CAPTURE MODAL (WITH GOOGLE APPS SCRIPT)
+        // EMAIL CAPTURE MODAL
         // ============================================
         function showEmailModal() {
-            // Update all the hidden fields in the modal with current estimate values
             document.getElementById('modalEstimateTotal').value = document.getElementById('estimatedTotal').textContent;
             document.getElementById('modalMaterialsCost').value = document.getElementById('materialCost').textContent;
             document.getElementById('modalLaborCost').value = document.getElementById('laborCost').textContent;
@@ -1544,7 +1542,6 @@
             document.getElementById('modalComplexity').value = document.getElementById('complexity').value;
             document.getElementById('modalUrgency').value = document.getElementById('urgency').value;
 
-            // Show the modal
             document.getElementById('emailModal').classList.add('show');
             document.getElementById('modalEmail').value = '';
             document.getElementById('modalEmail').focus();
@@ -1554,7 +1551,6 @@
             document.getElementById('emailModal').classList.remove('show');
         }
 
-        // Close modal when clicking outside
         document.getElementById('emailModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeEmailModal();
@@ -1562,10 +1558,9 @@
         });
 
         // ============================================
-        // CONTACT FORM (with Google Apps Script)
+        // CONTACT FORM
         // ============================================
         document.querySelector('.contact-form form').addEventListener('submit', function(e) {
-            // Show confirmation message after submission
             setTimeout(function() {
                 document.querySelector('.contact-form form').style.display = 'none';
                 document.getElementById('confirmationMessage').style.display = 'block';
