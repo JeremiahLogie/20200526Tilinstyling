@@ -708,7 +708,7 @@
         }
 
         /* ============================================
-                   EMAIL CAPTURE MODAL (FIXED)
+                   EMAIL CAPTURE MODAL
                    ============================================ */
         .modal-overlay {
             display: none;
@@ -1000,7 +1000,7 @@
     <header>
         <div class="logo">
             <!-- Replace src with your actual logo -->
-            <img src="https://via.placeholder.com/40x40/1A4D2E/FFFFFF?text=T" alt="TilingnStyling Logo">
+            <img src="logo.png" alt="TilingnStyling Logo">
             Tiling<span>nStyling</span>
         </div>
         <div class="hamburger" id="hamburger">☰</div>
@@ -1122,42 +1122,38 @@
         </div>
 
         <div class="gallery-grid" id="galleryGrid">
-            <!-- Replace the src URLs with your actual images -->
+            <!-- Replace the src with your actual images -->
             <div class="gallery-item" data-category="bathroom">
-                <img src="https://via.placeholder.com/400x300/1A4D2E/FFFFFF?text=Bathroom+Project" alt="Bathroom Tiling">
+                <img src="Bathroom1.jpg" alt="Bathroom Tiling">
                 <span class="category-tag">Bathroom</span>
             </div>
             <div class="gallery-item" data-category="bathroom">
-                <img src="https://via.placeholder.com/400x300/2D5A27/FFFFFF?text=Modern+Bathroom" alt="Modern Bathroom">
+                <img src="Bathroom2.jpg" alt="Modern Bathroom">
                 <span class="category-tag">Bathroom</span>
             </div>
             <div class="gallery-item" data-category="kitchen">
-                <img src="https://via.placeholder.com/400x300/1A4D2E/FFFFFF?text=Kitchen+Backsplash" alt="Kitchen Backsplash">
+                <img src="Kitchen1.jpg" alt="Kitchen Backsplash">
                 <span class="category-tag">Kitchen</span>
             </div>
             <div class="gallery-item" data-category="kitchen">
-                <img src="https://via.placeholder.com/400x300/2D5A27/FFFFFF?text=Kitchen+Floor" alt="Kitchen Floor">
+                <img src="Kitchen2.jpg" alt="Kitchen Floor">
                 <span class="category-tag">Kitchen</span>
             </div>
             <div class="gallery-item" data-category="flooring">
-                <img src="https://via.placeholder.com/400x300/1A4D2E/FFFFFF?text=Living+Room+Floor" alt="Living Room Floor">
+                <img src="Flooring1.jpg" alt="Living Room Floor">
                 <span class="category-tag">Flooring</span>
             </div>
             <div class="gallery-item" data-category="flooring">
-                <img src="https://via.placeholder.com/400x300/2D5A27/FFFFFF?text=Hallway+Tiling" alt="Hallway Tiling">
+                <img src="Flooring2.jpg" alt="Hallway Tiling">
                 <span class="category-tag">Flooring</span>
             </div>
             <div class="gallery-item" data-category="commercial">
-                <img src="https://via.placeholder.com/400x300/1A4D2E/FFFFFF?text=Office+Lobby" alt="Office Lobby">
+                <img src="commercial1.jpg" alt="Office Lobby">
                 <span class="category-tag">Commercial</span>
             </div>
             <div class="gallery-item" data-category="commercial">
-                <img src="https://via.placeholder.com/400x300/2D5A27/FFFFFF?text=Restaurant+Floor" alt="Restaurant Floor">
+                <img src="commercial2.jpg" alt="Restaurant Floor">
                 <span class="category-tag">Commercial</span>
-            </div>
-            <div class="gallery-item" data-category="bathroom">
-                <img src="https://via.placeholder.com/400x300/1A4D2E/FFFFFF?text=Wet+Room+Tiling" alt="Wet Room Tiling">
-                <span class="category-tag">Bathroom</span>
             </div>
         </div>
 
@@ -1235,8 +1231,7 @@
         <div class="about-container">
             <div class="about-photo">
                 <div class="photo-circle">
-                    <!-- Replace src with actual profile photo -->
-                    <img src="https://via.placeholder.com/200x200/1A4D2E/FFFFFF?text=IG" alt="Ian Gary">
+                    <img src="Ian Gary.jpg" alt="Ian Gary">
                 </div>
                 <h3>Ian Gary</h3>
                 <p>Owner &amp; Lead Tiler</p>
@@ -1273,7 +1268,7 @@
     </section>
 
     <!-- ============================================
-    PAGE: CONTACT (WITH FORMSUBMIT)
+    PAGE: CONTACT (WITH GOOGLE APPS SCRIPT)
     ============================================ -->
     <section class="page" id="page-contact">
         <h2 class="section-title">Contact TilingnStyling</h2>
@@ -1281,12 +1276,10 @@
 
         <div class="contact-container">
             <div class="contact-form" id="contactForm">
-                <!-- FORM WITH FORMSUBMIT -->
-                <form action="https://formsubmit.co/el/zexefi" method="POST">
-                    <!-- Hidden fields for FormSubmit -->
-                    <input type="hidden" name="_captcha" value="true">
-                    <input type="hidden" name="_next" value="https://jeremiahlogie20200526.github.io/thank-you.html">
-                    <input type="hidden" name="_autoresponse" value="Thank you for your enquiry! Ian will respond within 24 hours.">
+                <!-- FORM WITH GOOGLE APPS SCRIPT -->
+                <form action="https://script.google.com/macros/s/AKfycbwlkd7k8CCjoVrPCeCatP3gy0ssI3hdu1kFVT2XFYdaI8AcF7B2oa3qXJPN1a1MF6jqAw/exec" method="POST">
+                    <!-- Hidden field for Google Apps Script -->
+                    <input type="hidden" name="_subject" value="New Enquiry from TilingnStyling Website">
 
                     <label for="contactName">Name <span class="required">*</span></label>
                     <input type="text" id="contactName" name="name" placeholder="Your full name" required>
@@ -1311,7 +1304,7 @@
                     <button type="submit" class="btn btn-dark" style="width: 100%; margin-top: 10px;">Send Enquiry</button>
                 </form>
 
-                <!-- Confirmation Message (hidden initially) -->
+                <!-- Confirmation Message -->
                 <div id="confirmationMessage" style="display:none; background: #E8F5E9; border: 2px solid #8BC34A; border-radius: 12px; padding: 25px; text-align: center; margin-top: 20px;">
                     <div style="font-size: 48px;">✅</div>
                     <h3 style="color: #1A4D2E;">Thank You!</h3>
@@ -1368,7 +1361,7 @@
     </section>
 
     <!-- ============================================
-    EMAIL CAPTURE MODAL (FIXED - WITH HTML FORM)
+    EMAIL CAPTURE MODAL (WITH GOOGLE APPS SCRIPT)
     ============================================ -->
     <div class="modal-overlay" id="emailModal">
         <div class="modal-box">
@@ -1376,10 +1369,8 @@
             <h2>Get Your Estimate by Email</h2>
             <p>Enter your email address below and we'll send your estimate directly to your inbox.</p>
 
-            <!-- FIXED: Using a real HTML form instead of JavaScript -->
-            <form action="https://formsubmit.co/el/zexefi" method="POST" id="estimatorForm">
-                <input type="hidden" name="_captcha" value="true">
-                <input type="hidden" name="_autoresponse" value="Thank you for your enquiry! Your estimate is attached. Ian will respond within 24 hours.">
+            <!-- FORM WITH GOOGLE APPS SCRIPT -->
+            <form action="https://script.google.com/macros/s/AKfycbwlkd7k8CCjoVrPCeCatP3gy0ssI3hdu1kFVT2XFYdaI8AcF7B2oa3qXJPN1a1MF6jqAw/exec" method="POST">
                 <input type="hidden" name="_subject" value="New Estimate Request from TilingnStyling">
 
                 <!-- Estimate details will be filled by JavaScript -->
@@ -1394,7 +1385,7 @@
                 <input type="hidden" name="urgency" id="modalUrgency" value="">
 
                 <input type="email" id="modalEmail" name="email" placeholder="your@email.com" required>
-                <button type="submit" class="btn btn-primary" onclick="fillModalData()">Send Estimate</button>
+                <button type="submit" class="btn btn-primary">Send Estimate</button>
             </form>
 
             <span class="skip-link" onclick="closeEmailModal()">Skip – I'll contact you later</span>
@@ -1539,7 +1530,7 @@
         }
 
         // ============================================
-        // EMAIL CAPTURE MODAL (FIXED)
+        // EMAIL CAPTURE MODAL (WITH GOOGLE APPS SCRIPT)
         // ============================================
         function showEmailModal() {
             // Update all the hidden fields in the modal with current estimate values
@@ -1563,12 +1554,6 @@
             document.getElementById('emailModal').classList.remove('show');
         }
 
-        function fillModalData() {
-            // This function runs when the user clicks "Send Estimate"
-            // The hidden fields are already filled by showEmailModal()
-            // The form will submit normally to FormSubmit
-        }
-
         // Close modal when clicking outside
         document.getElementById('emailModal').addEventListener('click', function(e) {
             if (e.target === this) {
@@ -1577,7 +1562,7 @@
         });
 
         // ============================================
-        // CONTACT FORM (with FormSubmit)
+        // CONTACT FORM (with Google Apps Script)
         // ============================================
         document.querySelector('.contact-form form').addEventListener('submit', function(e) {
             // Show confirmation message after submission
