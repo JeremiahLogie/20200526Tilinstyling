@@ -619,16 +619,6 @@
             resize: vertical;
         }
 
-        .contact-form .error {
-            color: #FF0000;
-            font-size: 13px;
-            display: none;
-        }
-
-        .contact-form .error.show {
-            display: block;
-        }
-
         .contact-info {
             background: #F5F5F5;
             padding: 30px;
@@ -718,7 +708,7 @@
         }
 
         /* ============================================
-                   EMAIL CAPTURE MODAL
+                   EMAIL CAPTURE MODAL (FIXED)
                    ============================================ */
         .modal-overlay {
             display: none;
@@ -1010,7 +1000,7 @@
     <header>
         <div class="logo">
             <!-- Replace src with your actual logo -->
-            <img src="logo.png" alt="TilingnStyling Logo">
+            <img src="https://via.placeholder.com/40x40/1A4D2E/FFFFFF?text=T" alt="TilingnStyling Logo">
             Tiling<span>nStyling</span>
         </div>
         <div class="hamburger" id="hamburger">☰</div>
@@ -1134,39 +1124,39 @@
         <div class="gallery-grid" id="galleryGrid">
             <!-- Replace the src URLs with your actual images -->
             <div class="gallery-item" data-category="bathroom">
-                <img src="bathroom1.jpg" alt="Bathroom Tiling">
+                <img src="https://via.placeholder.com/400x300/1A4D2E/FFFFFF?text=Bathroom+Project" alt="Bathroom Tiling">
                 <span class="category-tag">Bathroom</span>
             </div>
             <div class="gallery-item" data-category="bathroom">
-                <img src="bathroom2.jpg" alt="Modern Bathroom">
+                <img src="https://via.placeholder.com/400x300/2D5A27/FFFFFF?text=Modern+Bathroom" alt="Modern Bathroom">
                 <span class="category-tag">Bathroom</span>
             </div>
             <div class="gallery-item" data-category="kitchen">
-                <img src="Kitchen1.jpg" alt="Kitchen Backsplash">
+                <img src="https://via.placeholder.com/400x300/1A4D2E/FFFFFF?text=Kitchen+Backsplash" alt="Kitchen Backsplash">
                 <span class="category-tag">Kitchen</span>
             </div>
             <div class="gallery-item" data-category="kitchen">
-                <img src="Kitchen2.jpg" alt="Kitchen Floor">
+                <img src="https://via.placeholder.com/400x300/2D5A27/FFFFFF?text=Kitchen+Floor" alt="Kitchen Floor">
                 <span class="category-tag">Kitchen</span>
             </div>
             <div class="gallery-item" data-category="flooring">
-                <img src="Flooring1.jpg" alt="Living Room Floor">
+                <img src="https://via.placeholder.com/400x300/1A4D2E/FFFFFF?text=Living+Room+Floor" alt="Living Room Floor">
                 <span class="category-tag">Flooring</span>
             </div>
             <div class="gallery-item" data-category="flooring">
-                <img src="Flooring2.jpg" alt="Hallway Tiling">
+                <img src="https://via.placeholder.com/400x300/2D5A27/FFFFFF?text=Hallway+Tiling" alt="Hallway Tiling">
                 <span class="category-tag">Flooring</span>
             </div>
             <div class="gallery-item" data-category="commercial">
-                <img src="commercial1.jpg" alt="Office Lobby">
+                <img src="https://via.placeholder.com/400x300/1A4D2E/FFFFFF?text=Office+Lobby" alt="Office Lobby">
                 <span class="category-tag">Commercial</span>
             </div>
             <div class="gallery-item" data-category="commercial">
-                <img src="commercial2.jpg" alt="Restaurant Floor">
+                <img src="https://via.placeholder.com/400x300/2D5A27/FFFFFF?text=Restaurant+Floor" alt="Restaurant Floor">
                 <span class="category-tag">Commercial</span>
             </div>
             <div class="gallery-item" data-category="bathroom">
-                <img src="Bathroom3.jpg" alt="Wet Room Tiling">
+                <img src="https://via.placeholder.com/400x300/1A4D2E/FFFFFF?text=Wet+Room+Tiling" alt="Wet Room Tiling">
                 <span class="category-tag">Bathroom</span>
             </div>
         </div>
@@ -1245,8 +1235,8 @@
         <div class="about-container">
             <div class="about-photo">
                 <div class="photo-circle">
-                    
-                    <img src="Ian Gary.jpg" alt="Ian Gary">
+                    <!-- Replace src with actual profile photo -->
+                    <img src="https://via.placeholder.com/200x200/1A4D2E/FFFFFF?text=IG" alt="Ian Gary">
                 </div>
                 <h3>Ian Gary</h3>
                 <p>Owner &amp; Lead Tiler</p>
@@ -1283,7 +1273,7 @@
     </section>
 
     <!-- ============================================
-    PAGE: CONTACT
+    PAGE: CONTACT (WITH FORMSUBMIT)
     ============================================ -->
     <section class="page" id="page-contact">
         <h2 class="section-title">Contact TilingnStyling</h2>
@@ -1291,18 +1281,24 @@
 
         <div class="contact-container">
             <div class="contact-form" id="contactForm">
-                <form onsubmit="submitContactForm(event)">
+                <!-- FORM WITH FORMSUBMIT -->
+                <form action="https://formsubmit.co/el/zexefi" method="POST">
+                    <!-- Hidden fields for FormSubmit -->
+                    <input type="hidden" name="_captcha" value="true">
+                    <input type="hidden" name="_next" value="https://jeremiahlogie20200526.github.io/thank-you.html">
+                    <input type="hidden" name="_autoresponse" value="Thank you for your enquiry! Ian will respond within 24 hours.">
+
                     <label for="contactName">Name <span class="required">*</span></label>
-                    <input type="text" id="contactName" placeholder="Your full name" required>
+                    <input type="text" id="contactName" name="name" placeholder="Your full name" required>
 
                     <label for="contactEmail">Email <span class="required">*</span></label>
-                    <input type="email" id="contactEmail" placeholder="your@email.com" required>
+                    <input type="email" id="contactEmail" name="email" placeholder="your@email.com" required>
 
                     <label for="contactPhone">Phone</label>
-                    <input type="tel" id="contactPhone" placeholder="(868) XXX-XXXX">
+                    <input type="tel" id="contactPhone" name="phone" placeholder="(868) XXX-XXXX">
 
                     <label for="contactProject">Project Type</label>
-                    <select id="contactProject">
+                    <select id="contactProject" name="project_type">
                         <option value="bathroom">Bathroom</option>
                         <option value="kitchen">Kitchen</option>
                         <option value="flooring">Flooring</option>
@@ -1310,20 +1306,20 @@
                     </select>
 
                     <label for="contactMessage">Message</label>
-                    <textarea id="contactMessage" placeholder="Tell us about your project..."></textarea>
-
-                    <div id="formError" class="error"></div>
+                    <textarea id="contactMessage" name="message" placeholder="Tell us about your project..."></textarea>
 
                     <button type="submit" class="btn btn-dark" style="width: 100%; margin-top: 10px;">Send Enquiry</button>
                 </form>
 
-                <div id="confirmationMessage" class="confirmation">
-                    <div class="icon">✅</div>
-                    <h3>Thank You!</h3>
+                <!-- Confirmation Message (hidden initially) -->
+                <div id="confirmationMessage" style="display:none; background: #E8F5E9; border: 2px solid #8BC34A; border-radius: 12px; padding: 25px; text-align: center; margin-top: 20px;">
+                    <div style="font-size: 48px;">✅</div>
+                    <h3 style="color: #1A4D2E;">Thank You!</h3>
                     <p>Your enquiry has been sent. Ian will respond within 24 hours.</p>
                 </div>
             </div>
 
+            <!-- CONTACT INFO -->
             <div class="contact-info">
                 <h3>Contact Information</h3>
 
@@ -1372,15 +1368,35 @@
     </section>
 
     <!-- ============================================
-    EMAIL CAPTURE MODAL
+    EMAIL CAPTURE MODAL (FIXED - WITH HTML FORM)
     ============================================ -->
     <div class="modal-overlay" id="emailModal">
         <div class="modal-box">
             <div class="icon">📨</div>
             <h2>Get Your Estimate by Email</h2>
             <p>Enter your email address below and we'll send your estimate directly to your inbox.</p>
-            <input type="email" id="modalEmail" placeholder="your@email.com">
-            <button class="btn btn-primary" onclick="submitEmailCapture()">Send Estimate</button>
+
+            <!-- FIXED: Using a real HTML form instead of JavaScript -->
+            <form action="https://formsubmit.co/el/zexefi" method="POST" id="estimatorForm">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_autoresponse" value="Thank you for your enquiry! Your estimate is attached. Ian will respond within 24 hours.">
+                <input type="hidden" name="_subject" value="New Estimate Request from TilingnStyling">
+
+                <!-- Estimate details will be filled by JavaScript -->
+                <input type="hidden" name="estimate_total" id="modalEstimateTotal" value="">
+                <input type="hidden" name="materials_cost" id="modalMaterialsCost" value="">
+                <input type="hidden" name="labor_cost" id="modalLaborCost" value="">
+                <input type="hidden" name="timeline" id="modalTimeline" value="">
+                <input type="hidden" name="project_type" id="modalProjectType" value="">
+                <input type="hidden" name="room_size" id="modalRoomSize" value="">
+                <input type="hidden" name="tile_type" id="modalTileType" value="">
+                <input type="hidden" name="complexity" id="modalComplexity" value="">
+                <input type="hidden" name="urgency" id="modalUrgency" value="">
+
+                <input type="email" id="modalEmail" name="email" placeholder="your@email.com" required>
+                <button type="submit" class="btn btn-primary" onclick="fillModalData()">Send Estimate</button>
+            </form>
+
             <span class="skip-link" onclick="closeEmailModal()">Skip – I'll contact you later</span>
         </div>
     </div>
@@ -1523,9 +1539,21 @@
         }
 
         // ============================================
-        // EMAIL CAPTURE MODAL
+        // EMAIL CAPTURE MODAL (FIXED)
         // ============================================
         function showEmailModal() {
+            // Update all the hidden fields in the modal with current estimate values
+            document.getElementById('modalEstimateTotal').value = document.getElementById('estimatedTotal').textContent;
+            document.getElementById('modalMaterialsCost').value = document.getElementById('materialCost').textContent;
+            document.getElementById('modalLaborCost').value = document.getElementById('laborCost').textContent;
+            document.getElementById('modalTimeline').value = document.getElementById('estimatedTimeline').textContent + ' days';
+            document.getElementById('modalProjectType').value = document.getElementById('projectType').value;
+            document.getElementById('modalRoomSize').value = document.getElementById('roomSize').value + ' m²';
+            document.getElementById('modalTileType').value = document.getElementById('tileType').value;
+            document.getElementById('modalComplexity').value = document.getElementById('complexity').value;
+            document.getElementById('modalUrgency').value = document.getElementById('urgency').value;
+
+            // Show the modal
             document.getElementById('emailModal').classList.add('show');
             document.getElementById('modalEmail').value = '';
             document.getElementById('modalEmail').focus();
@@ -1533,40 +1561,15 @@
 
         function closeEmailModal() {
             document.getElementById('emailModal').classList.remove('show');
-            restoreModalContent();
         }
 
-        function submitEmailCapture() {
-            var email = document.getElementById('modalEmail').value.trim();
-            if (!email || !email.includes('@') || !email.includes('.')) {
-                alert('Please enter a valid email address.');
-                return;
-            }
-
-            var modalBox = document.querySelector('.modal-box');
-            modalBox.innerHTML = `
-                        <div class="icon">✅</div>
-                        <h2>Estimate Sent!</h2>
-                        <p>Your estimate has been sent to <strong>${email}</strong></p>
-                        <p style="font-size: 14px; color: #999;">Ian will also follow up within 24 hours.</p>
-                        <button class="btn btn-primary" onclick="closeEmailModal()" style="margin-top: 15px;">Close</button>
-                    `;
+        function fillModalData() {
+            // This function runs when the user clicks "Send Estimate"
+            // The hidden fields are already filled by showEmailModal()
+            // The form will submit normally to FormSubmit
         }
 
-        function restoreModalContent() {
-            var modalBox = document.querySelector('.modal-box');
-            if (modalBox && !modalBox.querySelector('.btn-primary')) {
-                modalBox.innerHTML = `
-                            <div class="icon">📨</div>
-                            <h2>Get Your Estimate by Email</h2>
-                            <p>Enter your email address below and we'll send your estimate directly to your inbox.</p>
-                            <input type="email" id="modalEmail" placeholder="your@email.com">
-                            <button class="btn btn-primary" onclick="submitEmailCapture()">Send Estimate</button>
-                            <span class="skip-link" onclick="closeEmailModal()">Skip – I'll contact you later</span>
-                        `;
-            }
-        }
-
+        // Close modal when clicking outside
         document.getElementById('emailModal').addEventListener('click', function(e) {
             if (e.target === this) {
                 closeEmailModal();
@@ -1574,28 +1577,15 @@
         });
 
         // ============================================
-        // CONTACT FORM
+        // CONTACT FORM (with FormSubmit)
         // ============================================
-        function submitContactForm(e) {
-            e.preventDefault();
-            var name = document.getElementById('contactName').value.trim();
-            var email = document.getElementById('contactEmail').value.trim();
-            var errorDiv = document.getElementById('formError');
-
-            if (!name) {
-                errorDiv.textContent = 'Please enter your name.';
-                errorDiv.classList.add('show');
-                return;
-            }
-            if (!email || !email.includes('@') || !email.includes('.')) {
-                errorDiv.textContent = 'Please enter a valid email address.';
-                errorDiv.classList.add('show');
-                return;
-            }
-            errorDiv.classList.remove('show');
-            document.querySelector('.contact-form form').style.display = 'none';
-            document.getElementById('confirmationMessage').classList.add('show');
-        }
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            // Show confirmation message after submission
+            setTimeout(function() {
+                document.querySelector('.contact-form form').style.display = 'none';
+                document.getElementById('confirmationMessage').style.display = 'block';
+            }, 500);
+        });
 
         // ============================================
         // POSTCODE CHECKER
