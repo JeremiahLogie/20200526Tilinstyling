@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You – TilingnStyling</title>
+    <style>
+        /* ============================================
+                   THANK YOU PAGE STYLES
+                   ============================================ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #1A4D2E;
+            color: #FFFFFF;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .thank-you-container {
+            max-width: 600px;
+            padding: 50px 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .thank-you-container .icon {
+            font-size: 80px;
+            margin-bottom: 20px;
+        }
+
+        .thank-you-container h1 {
+            font-size: 48px;
+            color: #8BC34A;
+            margin-bottom: 15px;
+        }
+
+        .thank-you-container p {
+            font-size: 18px;
+            color: #E0E0E0;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .thank-you-container .highlight {
+            color: #8BC34A;
+            font-weight: bold;
+        }
+
+        .thank-you-container .btn {
+            display: inline-block;
+            padding: 14px 40px;
+            background: #8BC34A;
+            color: #1A4D2E;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 18px;
+            margin-top: 30px;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .thank-you-container .btn:hover {
+            background: #7CB342;
+            transform: scale(1.05);
+        }
+
+        .thank-you-container .btn-secondary {
+            display: inline-block;
+            padding: 12px 35px;
+            background: transparent;
+            color: #FFFFFF;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+            margin-left: 10px;
+            transition: background 0.3s, color 0.3s;
+        }
+
+        .thank-you-container .btn-secondary:hover {
+            background: #FFFFFF;
+            color: #1A4D2E;
+        }
+
+        @media (max-width: 600px) {
+            .thank-you-container {
+                padding: 30px 20px;
+            }
+            .thank-you-container h1 {
+                font-size: 32px;
+            }
+            .thank-you-container p {
+                font-size: 16px;
+            }
+            .thank-you-container .btn-secondary {
+                display: block;
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="thank-you-container">
+        <div class="icon">✅</div>
+        <h1>Thank You!</h1>
+        <p>Your enquiry has been sent to <span class="highlight">TilingnStyling</span>.</p>
+        <p>Ian will <strong>respond within 24 hours</strong>.</p>
+        <br>
+        <p style="font-size: 14px; color: #AAAAAA;">
+            You will receive a confirmation email shortly.
+        </p>
+        <div>
+            <a href="https://jeremiahlogie.github.io/20200526Tilinstyling/" class="btn">Return to Home</a>
+            <a href="https://jeremiahlogie.github.io/20200526Tilinstyling/" class="btn-secondary">View Our Work</a>
+        </div>
+    </div>
+
+</body>
+</html>
