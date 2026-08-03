@@ -1268,7 +1268,7 @@
     </section>
 
     <!-- ============================================
-    PAGE: CONTACT (WITH GOOGLE APPS SCRIPT)
+    PAGE: CONTACT (WITH GOOGLE APPS SCRIPT – UPDATED URL)
     ============================================ -->
     <section class="page" id="page-contact">
         <h2 class="section-title">Contact TilingnStyling</h2>
@@ -1276,8 +1276,8 @@
 
         <div class="contact-container">
             <div class="contact-form" id="contactForm">
-                <!-- FORM WITH GOOGLE APPS SCRIPT -->
-                <form action="https://script.google.com/macros/s/AKfycbx5eQTb4fDmrXLOkydJrigzpWB7MDeIW7bYOus8kGCqGX57F6tmyYQLHpIg4BapIynv7A/exec" method="POST">
+                <!-- FORM WITH GOOGLE APPS SCRIPT – UPDATED URL -->
+                <form action="https://script.google.com/macros/s/AKfycbyUs1FpyGZ_BIBkaL1xH5mGUZnGpZIkFv7Pmc9-9_fzg-XPYeNRQkbEhKtghVHWqsKnRg/exec" method="POST">
                     <input type="hidden" name="_subject" value="New Enquiry from TilingnStyling Website">
 
                     <label for="contactName">Name <span class="required">*</span></label>
@@ -1302,13 +1302,6 @@
 
                     <button type="submit" class="btn btn-dark" style="width: 100%; margin-top: 10px;">Send Enquiry</button>
                 </form>
-
-                <!-- Confirmation Message -->
-                <div id="confirmationMessage" style="display:none; background: #E8F5E9; border: 2px solid #8BC34A; border-radius: 12px; padding: 25px; text-align: center; margin-top: 20px;">
-                    <div style="font-size: 48px;">✅</div>
-                    <h3 style="color: #1A4D2E;">Thank You!</h3>
-                    <p>Your enquiry has been sent. Ian will respond within 24 hours.</p>
-                </div>
             </div>
 
             <!-- CONTACT INFO -->
@@ -1360,7 +1353,7 @@
     </section>
 
     <!-- ============================================
-    EMAIL CAPTURE MODAL (WITH GOOGLE APPS SCRIPT)
+    EMAIL CAPTURE MODAL (WITH GOOGLE APPS SCRIPT – UPDATED URL)
     ============================================ -->
     <div class="modal-overlay" id="emailModal">
         <div class="modal-box">
@@ -1368,8 +1361,8 @@
             <h2>Get Your Estimate by Email</h2>
             <p>Enter your email address below and we'll send your estimate directly to your inbox.</p>
 
-            <!-- FORM WITH GOOGLE APPS SCRIPT -->
-            <form action="https://script.google.com/macros/s/AKfycbx5eQTb4fDmrXLOkydJrigzpWB7MDeIW7bYOus8kGCqGX57F6tmyYQLHpIg4BapIynv7A/exec" method="POST">
+            <!-- FORM WITH GOOGLE APPS SCRIPT – UPDATED URL -->
+            <form action="https://script.google.com/macros/s/AKfycbyUs1FpyGZ_BIBkaL1xH5mGUZnGpZIkFv7Pmc9-9_fzg-XPYeNRQkbEhKtghVHWqsKnRg/exec" method="POST">
                 <input type="hidden" name="_subject" value="New Estimate Request from TilingnStyling">
 
                 <!-- Estimate details will be filled by JavaScript -->
@@ -1555,16 +1548,6 @@
             if (e.target === this) {
                 closeEmailModal();
             }
-        });
-
-        // ============================================
-        // CONTACT FORM
-        // ============================================
-        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
-            setTimeout(function() {
-                document.querySelector('.contact-form form').style.display = 'none';
-                document.getElementById('confirmationMessage').style.display = 'block';
-            }, 500);
         });
 
         // ============================================
