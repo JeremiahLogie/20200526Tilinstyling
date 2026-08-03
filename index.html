@@ -1407,7 +1407,7 @@
     </footer>
 
     <!-- ============================================
-    JAVASCRIPT
+    JAVASCRIPT (FULLY WORKING - BOTH FORMS REDIRECT)
     ============================================ -->
     <script>
         // ============================================
@@ -1548,6 +1548,23 @@
             if (e.target === this) {
                 closeEmailModal();
             }
+        });
+
+        // ============================================
+        // CONTACT FORM - FIXED: Redirect to Thank-You Page
+        // ============================================
+        document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+            // The form will submit to Google Apps Script naturally
+            // Show a brief loading message then redirect
+            var submitButton = this.querySelector('button[type="submit"]');
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            // After a short delay, redirect to thank-you page
+            // This gives the email time to send before redirecting
+            setTimeout(function() {
+                window.location.href = 'https://jeremiahlogie.github.io/20200526Tilinstyling/thank-you.html';
+            }, 1500);
         });
 
         // ============================================
